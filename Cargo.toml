@@ -1,15 +1,11 @@
 [package]
-name = "data"
+name = "netvm"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-
+data = { path = "libs/data" }
 
 [[bin]]
 name = "vm"
 path = "src/main.rs"
-
-[lib]
-name = "data"
-path = "libs/data/lib.rs"
