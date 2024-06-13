@@ -8,7 +8,6 @@ enum Var {
     Number(f32),
     Uint(usize),
     Pointer(usize),
-    Vector(Vec<Var>),
     String(String),
     Undefined
 }
@@ -20,3 +19,6 @@ pub struct List (HashMap<String, Var>);
 #[derive(Clone, PartialEq)]
 pub struct Graph (Vec<List>);
 
+
+enum PackEntry { Var(Var), List(List), Graph(Graph) }
+pub struct Pack (Vec<PackEntry>);

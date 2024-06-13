@@ -1,4 +1,4 @@
-use crate::buffer::{DATATYPE_CODE_GRAPH, DATATYPE_CODE_LIST, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED, DATATYPE_CODE_VECTOR};
+use crate::buffer::{ DATATYPE_CODE_GRAPH, DATATYPE_CODE_LIST, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED };
 use crate::{Graph, List, Var};
 
 
@@ -41,16 +41,6 @@ impl Var {
 
                 buffer
             }
-            Var::Vector(s) => {
-                let mut buffer: Vec<u8> = Vec::new();
-                buffer.push(DATATYPE_CODE_VECTOR);
-                buffer.append(&mut Vec::from(s.len().to_be_bytes()));
-                for var in s {
-                    buffer.append(&mut var.serialize());
-                }
-
-                buffer
-            }
 
             Var::String(s) => {
                 let mut buffer: Vec<u8> = Vec::new();
@@ -76,7 +66,6 @@ impl List {
             buffer.append(&mut Vec::from(key));
             buffer.append(&mut value.clone().serialize());
         }
-
         buffer
     }
 }
@@ -89,9 +78,12 @@ impl Graph {
         buffer.append(&mut Vec::from(self.0.len().to_be_bytes()));
 
         for list in self.0 {
+            let list_buffer = list.clone().serialize();
+            buffer.append(&mut Vec::from(list_buffer.len().to_be_bytes()));
             buffer.append(&mut list.serialize());
         }
 
         buffer
     }
+
 }

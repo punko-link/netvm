@@ -6,8 +6,9 @@ impl List {
         List (HashMap::new())
     }
 
-    pub fn set(mut self, k: String, v: Var) {
+    pub fn set(mut self, k: String, v: Var) -> List {
         self.0.insert(k, v);
+        self
     }
 
     pub fn get(self, k: String) -> Var {
