@@ -1,4 +1,7 @@
 
 fn main() {
-    // let a = data::vector_from_vec_u8(Vec::new());
+    let a: u8 = 5;
+    if a == true as u8 {
+        println!("A")
+    }
 }

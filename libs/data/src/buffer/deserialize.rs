@@ -1,5 +1,5 @@
 use crate::{Graph, List, Var};
-use crate::buffer::{BUFFER_LENGTH_NUMBER, BUFFER_LENGTH_POINTER, BUFFER_LENGTH_UINT, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED};
+use crate::buffer::{BUFFER_LENGTH_NUMBER, BUFFER_LENGTH_POINTER, BUFFER_LENGTH_UINT, DATATYPE_CODE_BOOL, DATATYPE_CODE_BYTE, DATATYPE_CODE_CMD, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED};
 
 impl Var {
     pub fn from_buffer(data_type_code: u8, mut buffer: Vec<u8>) -> Var {
@@ -20,6 +20,16 @@ impl Var {
             DATATYPE_CODE_STRING => {
                 Var::String(String::from_utf8(buffer).unwrap())
             }
+            DATATYPE_CODE_BYTE => {
+                Var::Byte(buffer[0])
+            },
+            DATATYPE_CODE_BOOL => {
+                Var::Bool(buffer[0] != 0)
+            },
+            DATATYPE_CODE_CMD => {
+                Var::Cmd(buffer[0])
+            },
+
             _ => panic!("Type parsing Error")
         }
     }

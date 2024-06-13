@@ -5,11 +5,15 @@ use std::collections::HashMap;
 
 #[derive(Clone, PartialEq)]
 enum Var {
+    Byte(u8),
+    Bool(bool),
     Number(f32),
     Uint(usize),
     Pointer(usize),
     String(String),
-    Undefined
+    Undefined,
+    Cmd(u8),
+
 }
 
 

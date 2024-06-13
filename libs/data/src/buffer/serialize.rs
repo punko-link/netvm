@@ -1,4 +1,4 @@
-use crate::buffer::{ DATATYPE_CODE_GRAPH, DATATYPE_CODE_LIST, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED };
+use crate::buffer::{DATATYPE_CODE_BOOL, DATATYPE_CODE_BYTE, DATATYPE_CODE_CMD, DATATYPE_CODE_GRAPH, DATATYPE_CODE_LIST, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED};
 use crate::{Graph, List, Var};
 
 
@@ -47,6 +47,31 @@ impl Var {
                 buffer.push(DATATYPE_CODE_STRING);
                 buffer.append(&mut Vec::from(s.len().to_be_bytes()));
                 buffer.append(&mut Vec::from(s));
+
+                buffer
+            }
+
+            Var::Byte(s) => {
+                let mut buffer: Vec<u8> = Vec::new();
+                buffer.push(DATATYPE_CODE_BYTE);
+                buffer.push(s);
+
+                buffer
+            }
+
+            Var::Bool(s) => {
+                let mut buffer: Vec<u8> = Vec::new();
+                buffer.push(DATATYPE_CODE_BOOL);
+                buffer.push(s as u8);
+
+                buffer
+            }
+
+
+            Var::Cmd(s) => {
+                let mut buffer: Vec<u8> = Vec::new();
+                buffer.push(DATATYPE_CODE_CMD);
+                buffer.push(s);
 
                 buffer
             }
