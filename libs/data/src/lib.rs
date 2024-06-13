@@ -1,5 +1,6 @@
 mod core;
 mod buffer;
+mod stack;
 
 use std::collections::HashMap;
 

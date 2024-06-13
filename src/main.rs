@@ -1,3 +1,4 @@
+mod master;
 
 fn main() {
     let a: u8 = 5;
