@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 data = { path = "libs/data" }
-tcp = { path = "libs/tcp" }
+firewall = { path = "libs/firewall" }
 
 [[bin]]
 name = "vm"
