@@ -1,11 +1,11 @@
 mod core;
-mod buffer;
+pub mod buffer;
 mod stack;
 
 use std::collections::HashMap;
 
 #[derive(Clone, PartialEq)]
-enum Var {
+pub enum Var {
     Byte(u8),
     Bool(bool),
     Number(f32),
@@ -27,3 +27,10 @@ pub struct Graph (Vec<List>);
 
 enum PackEntry { Var(Var), List(List), Graph(Graph) }
 pub struct Pack (Vec<PackEntry>);
+
+pub struct Instruction {
+    args: Vec<Var>,
+    cmd: u8
+}
+pub struct Stack (Vec<Var>);
+

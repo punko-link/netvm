@@ -33,3 +33,6 @@ pub const CMD_IS_BIG: u8 = 0b1000_1001; // >
 pub const CMD_IS_BIG_OR_EQUL: u8 = 0b1000_1010; // >=
 pub const CMD_IS_SML: u8 = 0b1000_1011; // <
 pub const CMD_IS_SML_OR_EQUL: u8 = 0b1000_1100; // <=
+
+
+pub const CMD_CONSOLE_LOG: u8 = 0b1000_1101; // println
