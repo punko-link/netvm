@@ -1,6 +1,6 @@
 mod core;
 pub mod buffer;
-mod stack;
+mod ops_stack;
 
 use std::collections::HashMap;
 
@@ -25,12 +25,12 @@ pub struct List (HashMap<String, Var>);
 pub struct Graph (Vec<List>);
 
 
-enum PackEntry { Var(Var), List(List), Graph(Graph) }
-pub struct Pack (Vec<PackEntry>);
-
 pub struct Instruction {
     args: Vec<Var>,
     cmd: u8
 }
+
+#[derive(Clone)]
 pub struct Stack (Vec<Var>);
+
 

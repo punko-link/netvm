@@ -2,7 +2,7 @@ use crate::{Graph, List, Var};
 use crate::buffer::{BUFFER_LENGTH_NUMBER, BUFFER_LENGTH_POINTER, BUFFER_LENGTH_UINT, DATATYPE_CODE_BOOL, DATATYPE_CODE_BYTE, DATATYPE_CODE_CMD, DATATYPE_CODE_NUMBER, DATATYPE_CODE_POINTER, DATATYPE_CODE_STRING, DATATYPE_CODE_UINT, DATATYPE_CODE_UNDEFINED};
 
 impl Var {
-    pub fn from_buffer(data_type_code: u8, mut buffer: Vec<u8>) -> Var {
+    pub fn from_buffer(data_type_code: u8, buffer: Vec<u8>) -> Var {
         match data_type_code {
             DATATYPE_CODE_UNDEFINED => Var::Undefined,
             DATATYPE_CODE_NUMBER => {
@@ -36,7 +36,7 @@ impl Var {
 }
 
 impl List {
-    pub fn from_buffer(mut buffer: Vec<u8>) -> List {
+    pub fn from_buffer(buffer: Vec<u8>) -> List {
         let mut list: List = List::new();
 
         let mut key: String = String::new();

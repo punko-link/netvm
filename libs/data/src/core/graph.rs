@@ -38,7 +38,7 @@ impl Graph {
         self.0.push(node);
         (self.clone(), Var::Pointer(self.0.len()))
     }
-    pub fn get_node(mut self, addr: Var) -> List {
+    pub fn get_node(self, addr: Var) -> List {
         self.0[addr.value_of_pointer()].clone()
     }
 
