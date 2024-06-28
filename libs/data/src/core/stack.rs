@@ -33,20 +33,6 @@ impl Stack {
                 args.push(one);
             }
         }
-        // loop {
-        //     let addr = self.0.len() - 1;
-        //     println!("111 {}", addr);
-        //     let one = self.0.remove(addr);
-        //     if one.clone().is_cmd() {
-        //         return (self, Instruction { args, cmd: one.cmd_to_byte() })
-        //     }
-        //
-        //     else {
-        //         args.push(one);
-        //     }
-        //     println!("444");
-        //     if addr == 0 { break };
-        // }
 
         panic!("NO CMD IN STACK");
     }
@@ -58,7 +44,6 @@ impl Stack {
 
         let instr: Instruction;
         (stack, instr) = stack.take_until_cmd();
-
         let result =  match instr.cmd {
             CMD__ADD => add(instr.args),
             _ => return (stack, Some(instr))

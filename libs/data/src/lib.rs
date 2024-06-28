@@ -8,9 +8,9 @@ use std::collections::HashMap;
 pub enum Var {
     Byte(u8),
     Bool(bool),
-    Number(f32),
-    Uint(usize),
-    Pointer(usize),
+    Number(f32), //+
+    Uint(usize), //+
+    Pointer(usize), //+
     String(String),
     Undefined,
     Cmd(u8),
