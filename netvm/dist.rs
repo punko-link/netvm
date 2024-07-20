@@ -2,7 +2,7 @@ use lib::core::{ Opcode, Var };
 
 pub fn prog() -> Vec<Opcode> {
     vec![
-        Opcode::Add,
+        Opcode::Div,
         Opcode::ToString,
         Opcode::Println,
         Opcode::Exit

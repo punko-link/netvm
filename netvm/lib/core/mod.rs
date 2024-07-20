@@ -1,11 +1,16 @@
 mod stack;
-
+mod op;
 
 #[derive(Clone)]
 pub enum Opcode {
     Add,
+    Dif,
+    Mul,
+    Div,
 
     ToString,
+    ToNumber,
+    ToUint,
 
     Println,
 
