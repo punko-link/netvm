@@ -1,5 +1,5 @@
 mod stack;
-mod op;
+mod ops;
 
 #[derive(Clone)]
 pub enum Opcode {

@@ -1,5 +1,4 @@
-use lib::core::Var;
-use lib::ops;
+use core::{ ops, Var};
 
 pub fn add(x: Var, y: Var) -> Var {
     match x {

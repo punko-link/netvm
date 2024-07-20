@@ -1,7 +1,6 @@
-mod lib;
+mod core;
 mod dist;
 
-use lib::{core};
 fn main() {
     let mut stack = core::Stack::new(dist::stack());
     let mut prog = dist::prog();

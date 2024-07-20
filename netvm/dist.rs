@@ -1,4 +1,4 @@
-use lib::core::{ Opcode, Var };
+use core::{ Opcode, Var };
 
 pub fn prog() -> Vec<Opcode> {
     vec![
