@@ -1,4 +1,5 @@
 use core::{ Opcode, Var };
+use alloc::vec::Vec;
 
 pub fn prog() -> Vec<Opcode> {
     vec![
