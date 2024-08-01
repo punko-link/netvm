@@ -16,3 +16,5 @@ lto = true
 panic = "abort"
 
 [dependencies]
+alloc-no-stdlib = "2.0.4"
+emballoc = "0.2.0"

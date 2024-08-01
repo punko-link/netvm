@@ -3,5 +3,30 @@
 version = 3
 
 [[package]]
+name = "alloc-no-stdlib"
+version = "2.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc7bb162ec39d46ab1ca8c77bf72e890535becd1751bb45f64c597edb4c8c6b3"
+
+[[package]]
+name = "emballoc"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a1fd30811a003c891a368e0161ab9c4f6f298099a7b22b5f4a6ccdf4045e9f2"
+dependencies = [
+ "spin",
+]
+
+[[package]]
 name = "netvm"
 version = "0.1.0"
+dependencies = [
+ "alloc-no-stdlib",
+ "emballoc",
+]
+
+[[package]]
+name = "spin"
+version = "0.9.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
