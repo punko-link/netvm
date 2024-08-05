@@ -1,11 +1,9 @@
-use alloc::string::String;
 use core::arch::asm;
 use core::assert_eq;
 
-pub fn log(s: String) {
-    let slice = s.as_str();
-    let buf = slice.as_ptr();
-    let count = slice.len();
+pub fn log(s: &str) {
+    let buf = s.as_ptr();
+    let count = s.len();
     unsafe {
         let ret: usize;
 

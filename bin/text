@@ -1,0 +1,27 @@
+
+elf_x86_64:
+  -z noextern-protected-data  Do not treat protected data symbol as external
+  -z indirect-extern-access   Enable indirect external access
+  -z noindirect-extern-access Disable indirect external access (default)
+  -z dynamic-undefined-weak   Make undefined weak symbols dynamic
+  -z nodynamic-undefined-weak Do not make undefined weak symbols dynamic
+  -z noreloc-overflow         Disable relocation overflow check
+  -z call-nop=PADDING         Use PADDING as 1-byte NOP for branch
+  -z ibtplt                   Generate IBT-enabled PLT entries
+  -z ibt                      Generate GNU_PROPERTY_X86_FEATURE_1_IBT
+  -z shstk                    Generate GNU_PROPERTY_X86_FEATURE_1_SHSTK
+  -z cet-report=[none|warning|error] (default: none)
+                              Report missing IBT and SHSTK properties
+  -z report-relative-reloc    Report relative relocations
+  -z x86-64-{baseline|v[234]} Mark x86-64-{baseline|v[234]} ISA level as needed
+  -z lam-u48                  Generate GNU_PROPERTY_X86_FEATURE_1_LAM_U48
+  -z lam-u48-report=[none|warning|error] (default: none)
+                              Report missing LAM_U48 property
+  -z lam-u57                  Generate GNU_PROPERTY_X86_FEATURE_1_LAM_U57
+  -z lam-u57-report=[none|warning|error] (default: none)
+                              Report missing LAM_U57 property
+  -z lam-report=[none|warning|error] (default: none)
+                              Report missing LAM_U48 and LAM_U57 properties
+  -z pack-relative-relocs     Pack relative relocations
+  -z nopack-relative-relocs   Do not pack relative relocations (default)
+

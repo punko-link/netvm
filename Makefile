@@ -1,7 +1,7 @@
 build:
-	./build.sh
+	./scripts/build.sh
 
 dev:
-	./build.sh
-	./build/main
+	./scripts/build.sh
+	./bin/netvm
 
