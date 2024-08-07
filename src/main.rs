@@ -3,6 +3,7 @@
 
 mod vcore;
 mod sys_gnu_x86_64;
+mod dist;
 
 use sys_gnu_x86_64::io::cli;
 use sys_gnu_x86_64::process::exit;
