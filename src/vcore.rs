@@ -1,2 +1,3 @@
-mod mem;
-mod thread;
+pub mod vm;
+pub mod point;
+pub mod ops;

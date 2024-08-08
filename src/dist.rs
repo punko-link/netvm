@@ -1,3 +1,4 @@
+use crate::vcore::vm::VM;
 pub const START_STACK_LEN: usize =
 0
 ;
@@ -7,9 +8,10 @@ pub const PROG_LEN: usize =
 pub const MEMORY_SIZE: usize =
 2
 ;
-pub const START_STACK: [u8; START_STACK_LEN] =
-[]
+pub const STACK_SIZE: usize =
+0
 ;
-pub const PROG: [u8; PROG_LEN] =
+pub fn dist() -> VM { VM::new(
+[],
 []
-;
+)}
